@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Coding Events</title>
+
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
 
 <h1>All Events</h1>
 
-<ul>
-    <th:block th:each="event : ${events)">
-        <li th:text ="${event}"></li>
-    </th:block>
-</ul>
+<th:block>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Address</th>
+        </tr>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.getKey()}">Name</td>
+            <td th:text="${event.getValue()}">Description</td>
+            <td th:replace = "fragments :: address">LaunchCode!</td>
+        </tr>
+    </table>
+</th:block>
+<!--<ul>-->
+<!--    <th:block th:each="event : ${events}">-->
+<!--        <li th:text="${event}"></li>-->
+<!--    </th:block>-->
+<!--</ul>-->
 
 </body>
 </html>
