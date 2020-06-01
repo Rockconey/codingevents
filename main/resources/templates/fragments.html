@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8"/>
     <title>Coding Events</title>
 
@@ -8,10 +8,14 @@
     <link th:href="@{/styles.css}" rel="stylesheet">
 
 </head>
-<!--<head th:replace="fragment :: head"></head>-->
 <body>
-    <h1>Coding Events</h1>
 
-    <nav th:replace="fragments :: navigation"></nav>
+<nav th:fragment="navigation">
+    <ul>
+        <li><a href="/events">All Events</a></li>
+        <li><a href="/events/create">Create Event</a></li>
+    </ul>
+</nav>
+
 </body>
 </html>

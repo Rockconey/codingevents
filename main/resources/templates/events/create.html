@@ -9,9 +9,13 @@
 
 </head>
 <!--<head th:replace="fragment :: head"></head>-->
+<!--<nav th:replace="fragment :: navigation"></nav>-->
 <body>
-    <h1>Coding Events</h1>
+<h1>Create Event</h1>
 
-    <nav th:replace="fragments :: navigation"></nav>
+<form method="post" action="/events/create">
+    <input type="text" name="eventName">
+    <input type="submit" value="Create Event">
+</form>
 </body>
 </html>

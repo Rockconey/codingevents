@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Coding Events</title>
+
+    <script th:src="@{/script.js}"></script>
+    <link th:href="@{/styles.css}" rel="stylesheet">
+
 </head>
+<!--<head th:replace="fragment :: head"></head>-->
+<!--<nav th:replace="fragment :: navigation"></nav>-->
 <body>
 
 <h1>All Events</h1>
 
+<p th:unless="${events} and ${events.size()}">No events!</p>
+
 <ul>
-    <th:block th:each="event : ${events)">
+    <th:block th:each="event : ${events}">
         <li th:text ="${event}"></li>
     </th:block>
 </ul>
